@@ -46,3 +46,10 @@ std::string Numerique::info()
 	return "\nNumerique ::: Titre : " + getTitre() + " Auteur : " + getAuteur() + " Annee : " + annee + " Frequence : " + frequence + " Bit : " + bit;
 }
 
+
+// duplique le Numérique (constructeur par recopie)
+Enregistrement* Numerique::duplicate()
+{
+	Enregistrement* copy = new Numerique(this->getAuteur(), this->getTitre(), this->getAnnee(), this->getBit(),this->getFrequence(),this->getType());
+	return copy;
+}

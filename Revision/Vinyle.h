@@ -3,14 +3,18 @@
 
 #include "Enregistrement.h"
 
-class Vinyle : Enregistrement
+// Attention ! Par défaut, l'héritage est private !
+class Vinyle : public Enregistrement
 {
 	int format;
 
 public:
-	int getFormat();
-	std::string info();
 	Vinyle(std::string author, std::string title, int date, int form);
+	int getFormat();
+	
+	// déclaration des override
+	std::string info();
+	Enregistrement* duplicate();
 };
 
 #endif

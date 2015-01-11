@@ -3,18 +3,22 @@
 
 #include "Enregistrement.h"
 
-class Numerique : Enregistrement
+// Attention ! Par défaut, l'héritage est private !
+class Numerique : public Enregistrement
 {
 	int bit;
 	int frequence;
 	std::string type;
 
 public:
+	Numerique(std::string author, std::string title, int date, int bi, int freq, std::string typ);
 	int getBit();
 	int getFrequence();
 	std::string getType();
+
+	// déclaration des override
 	std::string info();
-	Numerique(std::string author, std::string title, int date, int bi, int freq, std::string typ);
+	Enregistrement* duplicate();
 };
 
 #endif

@@ -1,16 +1,18 @@
 #include "Enregistrement.h"
 // penser au Enregistrement::
 
-// constructeur
+// constructeurs
+Enregistrement::Enregistrement()
+{
+}
+
 Enregistrement::Enregistrement(std::string author, std::string title, int date):annee(date), auteur(author), titre(title)
 {
-
 }
 
 // destructeur
 Enregistrement::~Enregistrement()
 {
-
 }
 
 // accesseurs
@@ -30,13 +32,11 @@ std::string Enregistrement::getTitre()
 // to string
 std::string Enregistrement::info()
 {
-	// l'opérateur + ne prend que des std::string, pas des int
-	int year = this->getAnnee();
-	std::string annee;
-	std::stringstream out;
-	out << year;
-	annee = out.str();
-	out.str("");
+	return "appel à info() de Enregistrement :| ";
+}
 
-	return "\nEnregistrement ::: Auteur :" + this->getAuteur() + " Titre : " + this->getTitre() + " Année : " + annee;
+Enregistrement* Enregistrement::duplicate()
+{
+	std::cout << "appel à duplicate de Enregistrement -_- ";
+	return nullptr;
 }

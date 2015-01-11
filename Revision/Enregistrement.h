@@ -15,12 +15,17 @@ class Enregistrement
 	std::string titre;
 
 public:
+	Enregistrement();
 	~Enregistrement();
 	Enregistrement(std::string author, std::string title, int date);
+	
 	int getAnnee();
 	std::string getAuteur();
 	std::string getTitre();
-	std::string info();
+
+	// fonction à redéfinir lors de l'héritage (fonction virtuelle pure)
+	virtual std::string info() = 0;
+	virtual Enregistrement* duplicate() = 0;
 };
 
 #endif

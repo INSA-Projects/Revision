@@ -1,5 +1,6 @@
 #include "Numerique.h"
 #include "Vinyle.h"
+#include "Bibliotheque.h"
 
 int main()
 {
@@ -11,7 +12,6 @@ int main()
 	-- TAS --
 	Point* pt = new Point(3,2);
 	pt->display();
-
 	*/
 
 	// allocation dans la PILE
@@ -24,5 +24,14 @@ int main()
 	std::cout << v2->info();
 	std::cout << n1->info();
 
+	// création de la bibliothèque
+	Bibliotheque bib;
+	bib.ajouteEnregistrement(v2);
+	bib.ajouteEnregistrement(n1);
+	bib.affiche();
+
+	// duplication
+	bib.extraireAuteur("Sparklehorse").affiche();
+	bib.extraireNumerique(24).affiche();
 	return 0;
 }
